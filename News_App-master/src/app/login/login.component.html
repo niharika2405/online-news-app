@@ -1,0 +1,229 @@
+<!Doctype html>
+
+<html>
+
+<head>
+    <title>LOGIN HERE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            margin-bottom: 0px;
+            background-image: url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmV3c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60');
+        
+           
+           background-size: cover;
+        }
+
+        div.main {
+            width: 400px;
+            margin: 0px auto 0px auto;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 1px;
+            font-family: "Times New Roman", Times, serif;
+            font-style: oblique;
+            font-weight: bold;
+            color: black;
+        }
+
+        h4 {
+            text-align: center;
+            padding: 40px;
+            font-family: "Times New Roman", Times, serif;
+            font-style: oblique;
+            font-weight: bold;
+            color: black;
+        }
+
+        div.login {
+            background-color: rgba(211, 204, 204, 0.857);
+            width: 100%;
+            font-size: 18px;
+            border-radius: 50px;
+            border: 1px soid rgba(255, 255, 255, 0.3);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            margin-bottom: 90px;
+            margin-top: 90px;
+        }
+
+        form#login {
+            margin: 40px;
+            margin-bottom: 40px;
+            margin-top: 4px;
+
+        }
+
+        label {
+            font-family: "Times New Roman", Times, serif;
+            font-size: larger;
+            font-weight: bold;
+            font-style: oblique;
+            margin-left: 10px;
+            color: black;
+            padding: 10px;
+        }
+
+        input#name {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input#submit {
+            width: 200px;
+            padding: 7px;
+            font-size: 20px;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            border-radius: 3px;
+            background-color: rgba(30, 28, 25, 0.478);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            border: 1px solid rgba(20, 13, 13, 0.737);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 70px;
+            margin-left: 50px;
+
+
+        }
+
+
+        label,
+        span,
+        h2 {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            color: black;
+            font-weight: bold;
+            font-style: oblique;
+            font-family: 'Times New Roman', Times, serif;
+
+            margin-left: 10px;
+        }
+
+        p#for{
+            color: black;
+            font-weight: bold;
+            font-style: oblique;
+            font-family: 'Times New Roman', Times, serif;
+
+            margin-left: 80px;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <div class="main"><br><br>
+        <div class="login"><br><br><br>
+            <h2>VOYAGER-CRUX </h2>
+            <hr color="black" size="10px">
+            <h4>LOGIN HERE</h4>
+
+            <form #regForm="ngForm" (ngSubmit)="loginValidate(regForm)" id="login">
+
+
+                <label>Email</label>
+                <br>
+                <input type="text" name="Email" id="name" placeholder="Enter your Email" [(ngModel)]="userAuth.emailId">
+                <br><br>
+
+                <label>Password</label>
+                <br>
+                <input type="password" name="password" id="name" placeholder="Enter your Password"
+                    [(ngModel)]="userAuth.userPassword">
+                <br><br>
+
+                <input type="Submit" value="LOGIN" name="submit" id="submit">
+
+                <p>Dont have an Account ?
+                <a routerLink="/reg"> Register Here </a></p><br>
+                <p id="for"><a routerLink="/forgotpass"> Forgot Password </a></p>
+
+                <br><br>
+
+            </form>
+
+        </div>
+        <br>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+---- Include the above in your HEAD tag -
+
+<body>
+    <div id="login">
+        <h1 class="text-center text-white pt-5">Login form</h1>
+        <div class="container text-center" >
+            <div id="login-row" class="row justify-content-center text-center">
+                <div id="login-column" class="container col-md-6 text-center">
+                    <div id="login-box" class="container-fluid text-centre">
+
+                        <div class="container text-white col-md-6">
+                        <form #regForm="ngForm" (ngSubmit)="loginValidate(regForm)"> 
+
+    
+                            <table> 
+                            
+                                <tr> 
+                                <td> Email </td> 
+                                <td><input type="text" name="email"  [(ngModel)]="userAuth.emailId" required> </td>
+                                </tr><br>
+                        
+                                
+                                <tr> 
+                                    <td> Password </td> 
+                                    <td><input type="password" name="password"  [(ngModel)]="userAuth.userPassword" class="centre"> </td>
+                                    </tr><br>
+                                    <div class="container col-md-6">
+                                    <input type="submit" value="login" class="text-center">
+                                </div>
+                                    </table>
+                            </form><br>
+                        
+                        <p>Dont have an Account ?<a routerLink="/reg"> Register Here </a></p><br>
+                        <a routerLink="/forgotpass"> Forgot Password </a>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body> -->

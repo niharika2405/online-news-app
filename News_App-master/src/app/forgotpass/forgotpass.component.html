@@ -1,0 +1,243 @@
+<!Doctype html>
+
+<html>
+<head>
+    <title>UPDATE PROFILE</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      
+      body{
+         
+          margin-bottom: 0px;
+          background-color: rgba(13, 13, 13, 0.748);
+          
+      }
+      
+      div.main{
+          width: 400px;
+          margin: 0px auto 0px auto;
+      }
+      
+      h2{
+          text-align: center;
+          padding: 20px;
+          font-family: "Times New Roman", Times, serif;
+          font-style: oblique;
+          font-weight: bold;
+          color: black;
+      }
+
+      h4{
+        text-align: center;
+          padding: 20px;
+          font-family: "Times New Roman", Times, serif;
+          font-style: oblique;
+          font-weight: bold;
+          color: black;
+          margin-top: 20px;
+      }
+      
+      div.reg{
+          background-color: rgba(205, 195, 195, 0.881);
+          width: 100%;
+          font-size: 18px;
+          border-radius: 50px;
+          border: 1px soid rgba(255, 255, 255, 0.3);
+          box-shadow: 2px 2px 15px
+          rgba(0,0,0,0.3);
+          color: #fff;
+          margin-bottom: 10spx;
+          margin-top: 10px;
+      }
+      
+      form#reg{
+          margin: 40px;
+          margin-bottom: 40px;
+      
+      }
+      
+      label{
+        font-family: "Times New Roman", Times, serif;
+        font-size:larger;
+        font-weight: bold;
+        font-style: oblique;
+        margin-left: 10px;
+        color: black;
+      }
+      
+      input#name{
+          width: 300px;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          outline: 0;
+          padding: 7px;
+          background-color: #fff;
+          box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      select{
+        width: 300px;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          outline: 0;
+          padding: 7px;
+          background-color: #fff;
+          box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+      }
+      
+      input#submit{
+          width: 200px;
+          padding: 7px;
+          font-size: 20px;
+          font-family: 'Times New Roman', Times, serif;
+          font-weight: 600;
+          border-radius: 10px;
+          background-color: rgba(30, 28, 25, 0.478);
+          color: rgb(0, 0, 0);
+          cursor: pointer;
+          border: 1px solid rgba(20, 13, 13, 0.737);
+          box-shadow: 1px 1px 5px 
+          rgba(0,0,0,0.3);
+          margin-bottom: 70px;
+          margin-left: 55px;
+          
+      
+      }
+       
+      input#returnToLogin{
+        width: 300px;
+          padding: 7px;
+          font-size: 20px;
+          font-family: 'Times New Roman', Times, serif;
+          font-weight: 600;
+          border-radius: 10px;
+          background-color: rgba(30, 28, 25, 0.478);
+          color: rgb(0, 0, 0);
+          cursor: pointer;
+          border: 1px solid rgba(20, 13, 13, 0.737);
+          box-shadow: 1px 1px 5px 
+          rgba(0,0,0,0.3);
+          margin-bottom: 70px;
+          margin-left: 15px;
+          
+      
+      }
+      
+      
+      label,span,h2{
+          text-shadow: 1px 1px 5px
+          rgba(0,0,0,0.3);
+      }
+      
+      p{
+          color: black;
+          font-weight: bold;
+          font-style: oblique;
+          font-family: 'Times New Roman', Times, serif;
+      }
+      
+      
+      
+      
+      </style>
+</head>
+<body>
+    <div class="main"> <br><br>
+        <div class="reg">
+            <h2>VOYAGER-CRUX</h2>
+         
+          <hr color="black" size="10px">
+            <h4>PASSWORD RECOVERY</h4>
+           
+            <form #forgotForm="ngForm" (ngSubmit)="forgotPass(forgotForm)" id="reg">
+              
+                
+
+                <label>Email</label>
+                <br>
+                <input type="text" name="Email" id="name" placeholder="Enter your Email" [(ngModel)]="user.emailId">
+                <br><br>
+
+               
+
+                <label>Security Question</label>
+                <br>
+                <select name="squestion" id="name" [(ngModel)]="user.securityQuestion">
+                    <option value="" disabled selected hidden>Select the Question</option>
+                    <option> What is your first school name?</option>
+                    <option> When is your mother's birthday?</option>
+                    <option> What is your favourite cafe?</option>
+                    <option> What is your pet name?</option>
+                </select>
+
+
+                <br><br>
+
+
+                <label>Security Answer</label>
+                <br>
+                <input type="text" name="sanswer" id="name" placeholder="Enter security question" [(ngModel)]="user.securityAnswer">
+                <br><br><br>
+               
+
+
+                
+                <input type="submit" value="SUBMIT" name="submit" id="submit">
+                <input type="button" value="RETURN TO LOGIN" id="returnToLogin">
+            </form>
+
+        </div>
+        <br><br>
+    </div>
+</body>
+
+</html>
+
+
+
+
+<!-- <style>
+    body{
+    background-color:#D8BCAB;
+    margin-left:540px;
+    margin-top:100px;
+    
+    }
+    </style>
+    <a routerLink="/login"></a>
+    <form #forgotForm="ngForm" (ngSubmit)="forgotPass(forgotForm)">
+        <table>
+            <tr>
+                <td>Email Id</td>
+                <td><input type="text" name="emailId" [(ngModel)]="user.emailId" required></td>
+            </tr>
+    
+            <tr>
+                <td>Security Question</td>
+                <td>
+                <select name="Securty Question" [(ngModel)]="user.securityQuestion">
+                <option>What is your first schoolname</option>
+                <option>What is your favourite dish</option>
+                <option>What is your petname</option>
+                </select>
+                
+                </td>
+                
+            </tr>
+    
+            <tr>
+                <td>Security Answer</td>
+                <input type="text" name="Security Answer" [(ngModel)]="user.securityAnswer">
+            </tr>
+    
+            <tr>
+                <td> </td>
+                <td> <input type="submit"></td>
+            </tr>
+        </table>
+    
+    </form> -->
